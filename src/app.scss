@@ -6,3 +6,9 @@
 .material-symbols-outlined {
 	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
+
+@layer base {
+	h1 {
+		@apply font-semibold text-2xl leading-10 dark:text-gray-100;
+	}
+}
