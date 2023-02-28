@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { DarkMode, Navbar, NavBrand, NavHamburger, Tooltip } from 'flowbite-svelte';
 	import { createEventDispatcher } from 'svelte';
+	import MoonIcon from './icons/heroicons/MoonIcon.svelte';
+	import SunIcon from './icons/heroicons/SunIcon.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -29,9 +31,16 @@
 	</NavUl> -->
 
 	<div>
-		<DarkMode />
+		<DarkMode>
+			<svelte:fragment slot="lightIcon">
+				<MoonIcon class="w-5 h-5" fill="currentColor" />
+			</svelte:fragment>
+			<svelte:fragment slot="darkIcon">
+				<SunIcon class="w-5 h-5" fill="currentColor" />
+			</svelte:fragment>
+		</DarkMode>
 		<Tooltip placement="bottom">
-			{localStorage.getItem('color-theme') === 'dark' ? 'Toggle light mode' : 'Toggle dark mode'}
+			{localStorage.getItem('color-theme') === 'dark' ? 'Dark mode' : 'Light mode'}
 		</Tooltip>
 	</div>
 </Navbar>
