@@ -31,19 +31,9 @@
 			iconComponent: ChartPieIcon
 		},
 		{
-			label: 'Product',
-			activeUrl: '/product',
-			iconComponent: Squares2x2Icon,
-			children: [
-				{
-					label: 'Add Product',
-					activeUrl: '/add-product'
-				},
-				{
-					label: 'Product List',
-					activeUrl: '/product-list'
-				}
-			]
+			label: 'Products',
+			activeUrl: '/products',
+			iconComponent: Squares2x2Icon
 		},
 		{
 			label: 'Order',
@@ -67,7 +57,7 @@
 						{/each}
 					</SidebarDropdownWrapper>
 				{:else}
-					<SidebarItem label={sideBar.label} active={activeUrl === sideBar.activeUrl}>
+					<SidebarItem label={sideBar.label} href={sideBar.activeUrl} active={activeUrl === sideBar.activeUrl}>
 						<svelte:fragment slot="icon">
 							<svelte:component this={sideBar.iconComponent} class={iconClass} />
 						</svelte:fragment>
